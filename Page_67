@@ -1,0 +1,20 @@
+#include <linux/module.h>
+
+static int __init exemple_init(void)
+{
+        pr_notice("exemple init\n");
+        return 0;
+}
+
+static void __exit exemple_exit(void)
+{
+        pr_notice("exemple exit\n");
+        pr_err("Test pour DMESG\n");
+}
+
+module_init(exemple_init);
+module_exit(exemple_exit);
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Arnaud");
+MODULE_DESCRIPTION("Module minimal");
